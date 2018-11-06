@@ -8,6 +8,7 @@ Eat a Burger is an full-stack application built with:
 * MySQL
 * Handlebars
 * Materialize
+* Sequelize
 
 ### Instructions:
 * **Order a burger:** user orders a burger from the "Burgers Available" column. When user clicks on the "order" button it moves selected burger to the "Burgers Ordered" column and changes the status of the item in the SQL database.
