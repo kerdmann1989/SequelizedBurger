@@ -1,0 +1,14 @@
+<h5 class="burgerName">{{burger_name}}</h5>
+
+<div class="burgerList">
+	<button class="change-devoured waves-effect waves-light btn-large" data-id="{{id}}" data-newdevour="{{devour}}">
+		{{#if devour}}Order{{else}}Yum! Order Again!{{/if}}
+	</button>
+
+	<button class="delete-burger btn-floating btn-large waves-effect waves-light red" data-id="{{this.id}}"><i class="large material-icons">delete</i>Remove from Menu</button>
+	<br>
+	<br>
+	<hr>
+
+</div>
+

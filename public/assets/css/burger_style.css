@@ -1,0 +1,67 @@
+.addBurger {
+    background-color: #f39744
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff3e0;
+}
+
+.burgerList {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.burgerName {
+    color: #fff3e0;
+    font-weight: bold;
+}
+
+.burgerPic {
+    margin-bottom: -60px;
+}
+
+.card {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #412614;    
+    }
+
+.change-devoured {
+    background-color: #f39744
+}
+
+.delete-burger {
+    background-color: #fff3e0;
+    margin-left: 25px;
+}
+
+.form-group {
+    color: #fff3e0;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h3 {
+    color: white;
+    text-shadow: 1px 1px 1px #000;     
+}
+
+.menuTitle {
+    font-weight: bold;
+}
+
+.newBurger {
+    color: #f39744;
+    font-size: 20px;
+}
+
+.welcome {
+    color: #f39744;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    font-weight: bold;
+}
+
+

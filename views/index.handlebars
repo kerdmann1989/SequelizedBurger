@@ -1,0 +1,38 @@
+<div class="row">
+
+  <div class="col s6">
+    <div class="card z-depth-5 center-align menu">
+      <div class="card-panel orange lighten-5"><h4 class="menuTitle">Burgers Available</h4></div>
+      {{#each burgers}}
+      {{#unless devoured}}
+      {{> burgers/burger-block devour=true}}
+      {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="col s6 center-align">
+    <div class="card z-depth-5 center-align menu">
+      <div class="card-panel orange lighten-5"><h4 class="menuTitle">Burgers on Order</h4></div>
+      {{#each burgers}}
+      {{#if devoured}}
+      {{> burgers/burger-block devour=false}}
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="col s6">
+    <div class="card z-depth-5 center-align menu">
+      <div class="card-panel orange lighten-5"><h4 class="menuTitle">Add Your Own Burger</h4></div>
+      <form class="create-form">
+        <div class="form-group">
+          <label for="ca" class="newBurger">Enter your burger here</label>
+          <input type="text" id="ca" name="name" class="center-align">
+        </div>
+        <button type="submit" class="addBurger waves-effect waves-light btn-large">Add Burger</button>
+        <br>
+        <br>
+      </form>
+    </div>
+  </div>
