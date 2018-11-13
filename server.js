@@ -1,5 +1,6 @@
 var express = require("express");
-
+//SEQUELIZE REQUIREMENT
+var db = require("./models");
 var PORT = process.env.PORT || 8080;
 
 var app = express();
@@ -21,6 +22,11 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controller.js");
 
 app.use(routes);
+
+//SEQUELIZE
+db.sequelize.sync({force: false}).then(function() {
+
+});
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

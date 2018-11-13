@@ -1,5 +1,7 @@
 .addBurger {
-    background-color: #f39744
+    background-color: #f39744;
+    color: #412614;
+    font-weight: bold;
 }
 
 body {
@@ -14,11 +16,16 @@ body {
 
 .burgerName {
     color: #fff3e0;
-    font-weight: bold;
+    font-size: 42px;
 }
 
 .burgerPic {
     margin-bottom: -60px;
+}
+
+#ca {
+    color: #fff3e0;
+    font-size: 42px;
 }
 
 .card {
@@ -28,7 +35,9 @@ body {
     }
 
 .change-devoured {
-    background-color: #f39744
+    background-color: #f39744;
+    color: #412614;
+    font-weight: bold;
 }
 
 .delete-burger {

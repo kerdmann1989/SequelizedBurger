@@ -1,10 +1,12 @@
 var express = require("express");
+var db = require("../models");
 var router = express.Router();
 
-var burger = require("../models/burger.js");
-
+//GET route for all burgers
 router.get("/", function (req, res) {
-  burger.selectAll(function (data) {
+  db.burger.findAll({}).then(function (data) {
+    // console.log(data);
+
     var hbsObject = {
       burgers: data
     };
@@ -13,41 +15,41 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-  burger.insertOne([
-    "burger_name"
-  ], [
-      req.body.burger_name
-    ], function (result) {
-      res.json({ id: result.insertId });
-    });
+  console.log(req.body, "this is request.body")
+  db.burger.create({
+    burger_name: req.body.burger_name
+  }).then(function () {
+    // console.log(data, "this is response from db insert");
+    res.send("row added to db")
+  });
+
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
-
-  burger.updateOne({
+  var id = req.params.id;
+  console.log(id, "this is the id");
+  db.burger.update({
     devoured: req.body.devoured
-  }, condition, function (result) {
-    if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
+  }, {
+      where: {
+        id: id
+      }
+    }).then(function (data) {
+      console.log(data, "row updated");
+      res.send("update happened on " + id);
+    })
 });
 
 router.delete("/api/burgers/:id", function (req, res) {
-  var condition = "id = " + req.params.id;
-
-  burger.delete(condition, function (result) {
-    if (result.affectedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
+  db.burger.destroy({
+    where: {
+      id: req.params.id
     }
-  });
+  })
+    .then(function (data) {
+      console.log(data);
+      res.send("row deleted");
+    })
 });
 
 
