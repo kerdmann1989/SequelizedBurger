@@ -44,7 +44,6 @@ $(function () {
 
   $(".delete-burger").on("click", function () {
     var id = $(this).data("id");
-    console.log("delete button", id);
 
     // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
